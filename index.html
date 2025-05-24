@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatianest - Fast & Effective Property Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        /* Professional styling enhancements */
+        .gradient-text {
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+            border-radius: 2px;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-roboto">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">
+                        <i class="fas fa-house text-gray-800 mr-2"></i>Estatianest
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#home" class="text-gray-600 hover:text-gray-900 nav-link">Home</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 nav-link">How It Works</a>
+                    <a href="#services" class="text-gray-600 hover:text-gray-900 nav-link">Services</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900 nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 bg-gray-900 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center z-0 parallax-bg"
+            style="background-image: url('https://via.placeholder.com/1920x1080');"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center hero-content">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Fast & Effective Property Solutions
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    We buy properties quickly and efficiently, providing you with the best value for your property.
+                </p>
+                <a href="#contact"
+                    class="inline-block bg-white text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="h-1 bg-gray-100"></div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-100 pattern-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">How It Works</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                At Estatianest, we've streamlined the property selling process to make it as fast and stress-free as
+                possible. Our goal is to provide you with a fair offer and close on your timeline.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Step 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300 relative">
+                    <div
+                        class="absolute -top-4 -left-4 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        1</div>
+                    <div class="text-4xl text-gray-700 mb-4 text-center mt-4">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Contact Us</h3>
+                    <p class="text-gray-600 text-center">
+                        Reach out to us via phone or email. Provide us with some basic information about your property.
+                        There's no obligation and your information is kept confidential.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300 relative">
+                    <div
+                        class="absolute -top-4 -left-4 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        2</div>
+                    <div class="text-4xl text-gray-700 mb-4 text-center mt-4">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Property Assessment</h3>
+                    <p class="text-gray-600 text-center">
+                        We'll conduct a quick assessment of your property. We consider its condition, location, and
+                        market
+                        value to help us prepare different offer options.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300 relative">
+                    <div
+                        class="absolute -top-4 -left-4 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        3</div>
+                    <div class="text-4xl text-gray-700 mb-4 text-center mt-4">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Receive Your Offers</h3>
+                    <p class="text-gray-600 text-center">
+                        Based on the assessment, we'll present you with a no-obligation cash offer and a seller finance
+                        offer. You can review both options and choose the one that best suits your needs.
+                    </p>
+                </div>
+
+                <!-- Step 4: New Step -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300 relative">
+                    <div
+                        class="absolute -top-4 -left-4 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        4</div>
+                    <div class="text-4xl text-gray-700 mb-4 text-center mt-4">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Contract & Deposit</h3>
+                    <p class="text-gray-600 text-center">
+                        Once you agree to the offer, we will send the contract, our earnest money deposit, and proof of
+                        funds for your peace of mind.
+                    </p>
+                </div>
+
+                <!-- Step 5 (was Step 4) -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300 relative">
+                    <div
+                        class="absolute -top-4 -left-4 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        5</div>
+                    <div class="text-4xl text-gray-700 mb-4 text-center mt-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Close Quickly</h3>
+                    <p class="text-gray-600 text-center">
+                        If you accept the offer, we can close the deal quickly, often within days. We handle all the
+                        paperwork and closing costs, making the process smooth and simple.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="h-1 bg-gray-200"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                    <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Quick Property Purchase</h3>
+                    <p class="text-gray-600 text-center">We offer fast and hassle-free property purchases with
+                        competitive offers.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                    <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-balance-scale-left"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Professional Valuation</h3>
+                    <p class="text-gray-600 text-center">Get an accurate and fair market value assessment for your
+                        property.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                    <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Smooth Process</h3>
+                    <p class="text-gray-600 text-center">Experience a streamlined and transparent property selling
+                        process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="h-1 bg-gray-300"></div>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">What Our Clients Say</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Don't just take our word for it. Here's what our satisfied clients have to say about their experience
+                with Estatianest.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg testimonial-card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "Estatianest made selling my property incredibly easy. They were professional, transparent, and
+                        completed the process in just a week!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-gray-800 font-semibold">Lucia H.</p>
+                            <p class="text-gray-500 text-sm"><i class="fas fa-map-marker-alt text-gray-500 mr-1"></i>New
+                                York, NY</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg testimonial-card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "I was impressed by their fair valuation and quick response time. The team was always available
+                        to answer my questions."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-gray-800 font-semibold">Luke W.</p>
+                            <p class="text-gray-500 text-sm"><i class="fas fa-map-marker-alt text-gray-500 mr-1"></i>Los
+                                Angeles, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg testimonial-card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "The process was smooth from start to finish. They handled everything professionally and I
+                        received my payment promptly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-gray-800 font-semibold">Eoghan O'D.</p>
+                            <p class="text-gray-500 text-sm"><i
+                                    class="fas fa-map-marker-alt text-gray-500 mr-1"></i>Chicago, IL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="h-1 bg-gray-200"></div>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4 section-title">Frequently Asked Questions</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Find answers to common questions about our property buying process.
+            </p>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-gray-600 mr-3"></i>
+                        How quickly can you complete a property purchase?
+                    </h3>
+                    <p class="text-gray-600">
+                        We can typically complete a property purchase within 7-14 days, depending on the complexity of
+                        the transaction and your specific requirements. We work efficiently to ensure a smooth and quick
+                        process.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-gray-600 mr-3"></i>
+                        Do I need to pay any fees to sell my property to you?
+                    </h3>
+                    <p class="text-gray-600">
+                        No, there are no fees for selling your property to us. We cover all the costs associated with
+                        the purchase, including legal fees and closing costs. You receive the full agreed amount.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-gray-600 mr-3"></i>
+                        What types of properties do you buy?
+                    </h3>
+                    <p class="text-gray-600">
+                        We buy all types of properties, including residential homes, apartments, commercial properties,
+                        and land. Whether your property is in good condition or needs repairs, we're interested in
+                        making an offer.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-gray-600 mr-3"></i>
+                        How do you determine the offer price?
+                    </h3>
+                    <p class="text-gray-600">
+                        We consider multiple factors when determining the offer price, including the property's
+                        location, condition, market value, and current market trends. Our goal is to provide a fair and
+                        competitive offer that reflects the true value of your property.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="h-1 bg-gray-300"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Us</h2>
+            <div class="max-w-2xl mx-auto">
+                <div
+                    class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
+                    <p class="text-center text-gray-600 mb-6">
+                        Ready to sell your property? Get in touch with us today!
+                    </p>
+                    <div class="text-center flex flex-col items-center space-y-4">
+                        <a href="mailto:estatianest@gmail.com"
+                            class="inline-block bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-600 transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                            estatianest@gmail.com
+                        </a>
+                        <a href="tel:+35361526709"
+                            class="inline-block bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-600 transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                            +353 (61) 526 709
+                        </a>
+                        <a href="tel:+35361526710"
+                            class="inline-block bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-600 transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                            +353 (61) 526 710
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-4 border-t border-gray-700">
+            <p>&copy; 2024 Estatianest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Hero content animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                const elements = heroContent.children;
+                for (let i = 0; i < elements.length; i++) {
+                    setTimeout(() => {
+                        elements[i].classList.add('is-visible');
+                    }, i * 150); // Stagger the animation slightly
+                }
+            }
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-opacity duration-300 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>
