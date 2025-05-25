@@ -594,7 +594,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-opacity duration-300 z-50">
+        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-opacity duration-300 z-50 hover:bg-gray-700">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -676,6 +676,26 @@
     </script>
 
     <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Show button when user scrolls down 300px
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+            }
+        });
+
+        // Smooth scroll to top when button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Hamburger menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
