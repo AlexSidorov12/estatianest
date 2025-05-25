@@ -59,6 +59,88 @@
             position: relative;
             overflow: hidden;
         }
+
+        /* Modal Enhancements */
+        #modal-overlay {
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #modal-content {
+            border: 1.5px solid #e2e8f0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            animation: modalPop 0.3s;
+        }
+
+        @keyframes modalPop {
+            from {
+                transform: translateY(40px) scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .modal-learn-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s, box-shadow 0.2s;
+            border: none;
+        }
+
+        .modal-learn-btn:hover {
+            background: linear-gradient(45deg, #4a5568, #2d3748);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: #f7fafc;
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.5rem;
+            color: #4a5568;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
     </style>
 </head>
 
@@ -76,6 +158,7 @@
                     <a href="#home" class="text-gray-600 hover:text-gray-900 nav-link">Home</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 nav-link">How It Works</a>
                     <a href="#services" class="text-gray-600 hover:text-gray-900 nav-link">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-900 nav-link">About</a>
                     <a href="#contact" class="text-gray-600 hover:text-gray-900 nav-link">Contact</a>
                 </div>
             </div>
@@ -210,23 +293,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                <!-- Quick Property Purchase -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400 cursor-pointer"
+                    onclick="openModal('purchase')">
                     <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-money-bill-wave"></i></div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Quick Property Purchase</h3>
                     <p class="text-gray-600 text-center">We offer fast and hassle-free property purchases with
-                        competitive offers.
-                    </p>
+                        competitive offers.</p>
                 </div>
-                <div
-                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                <!-- Professional Valuation -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400 cursor-pointer"
+                    onclick="openModal('valuation')">
                     <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-balance-scale-left"></i></div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Professional Valuation</h3>
                     <p class="text-gray-600 text-center">Get an accurate and fair market value assessment for your
                         property.</p>
                 </div>
-                <div
-                    class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400">
+                <!-- Smooth Process -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 border border-transparent hover:border-gray-400 cursor-pointer"
+                    onclick="openModal('process')">
                     <div class="text-4xl text-gray-700 mb-4 text-center"><i class="fas fa-handshake"></i></div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Smooth Process</h3>
                     <p class="text-gray-600 text-center">Experience a streamlined and transparent property selling
@@ -391,6 +476,48 @@
     <!-- Divider -->
     <div class="h-1 bg-gray-300"></div>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 section-title">About Us</h2>
+            <p class="text-xl text-gray-700 mb-6">We are a company that specializes in buying property. Based in
+                Ireland, we focus on purchasing properties in the United States Of America, providing a seamless and professional experience
+                for sellers.</p>
+            <p class="text-lg text-gray-600 mb-6">Our team is dedicated to making the property selling process as smooth
+                and efficient as possible, leveraging our expertise and international perspective to deliver the best
+                results for our clients.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md w-full md:w-1/2 card-hover flex flex-col items-center">
+                    <img src="Images/Alex.jpeg" alt="Alex Sidorov"
+                        class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-gray-200 shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Alex Sidorov</h3>
+                    <p class="text-gray-600">Co-Founder</p>
+                    <p class="text-gray-500 text-sm mt-2">
+                        Bachelors Degree in Computer Science<br>
+                        Major in Computer Systems<br>
+                        First Class Honors<br>
+                        University of Limerick
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md w-full md:w-1/2 card-hover flex flex-col items-center">
+                    <img src="Images/Luke.jpeg" alt="Luke Ryan"
+                        class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-gray-200 shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Luke Ryan</h3>
+                    <p class="text-gray-600">Co-Founder</p>
+                    <p class="text-gray-500 text-sm mt-2">
+                        Bachelors Degree in Business Studies<br>
+                        Major in Economics<br>
+                        First Class Honors<br>
+                        University of Limerick
+                    </p>
+                </div>
+            </div>
+            <p class="mt-8"><a href="https://www.ul.ie/" target="_blank" rel="noopener"
+                    class="text-blue-700 underline hover:text-blue-900">Learn more about the University of Limerick
+                    here</a></p>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,6 +576,83 @@
         class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-opacity duration-300 z-50">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Service Modals -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div id="modal-content" class="bg-white rounded-lg shadow-2xl max-w-lg w-full p-8 relative">
+            <button onclick="closeModal()" class="modal-close-btn" aria-label="Close Modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById('modal-overlay');
+            const body = document.getElementById('modal-body');
+            let content = '';
+            if (type === 'purchase') {
+                content = `
+                    <div class='modal-icon'><i class="fas fa-money-bill-wave"></i></div>
+                    <h2 class='text-2xl font-bold mb-4 text-gray-800'>Quick Property Purchase</h2>
+                    <p class='text-gray-700 mb-2'>Our team specializes in fast, hassle-free property purchases. We understand the urgency of your needs and provide competitive offers, allowing you to sell your property quickly and move forward with confidence. No lengthy waiting periods, no unnecessary delays—just a straightforward process designed for your convenience.</p>
+                    <ul class='list-disc pl-5 text-gray-600 mb-4'><li>Receive a fair cash offer within days</li><li>No repairs or renovations needed</li><li>Flexible closing dates to suit your schedule</li></ul>
+                    <button class='modal-learn-btn' onclick='showContactMessage("purchase")'>Learn More</button>
+                `;
+            } else if (type === 'valuation') {
+                content = `
+                    <div class='modal-icon'><i class="fas fa-balance-scale-left"></i></div>
+                    <h2 class='text-2xl font-bold mb-4 text-gray-800'>Professional Valuation</h2>
+                    <p class='text-gray-700 mb-2'>We provide a thorough and professional valuation of your property, considering its condition, location, and current market trends. Our experts ensure you receive an accurate and fair market value assessment, empowering you to make informed decisions.</p>
+                    <ul class='list-disc pl-5 text-gray-600 mb-4'><li>Comprehensive property analysis</li><li>Transparent and honest assessments</li><li>No obligation to accept our offer</li></ul>
+                    <button class='modal-learn-btn' onclick='showContactMessage("valuation")'>Learn More</button>
+                `;
+            } else if (type === 'process') {
+                content = `
+                    <div class='modal-icon'><i class="fas fa-handshake"></i></div>
+                    <h2 class='text-2xl font-bold mb-4 text-gray-800'>Smooth Process</h2>
+                    <p class='text-gray-700 mb-2'>From start to finish, we handle every aspect of the property selling process with professionalism and care. Our streamlined approach ensures a transparent, stress-free experience, so you can focus on what matters most to you.</p>
+                    <ul class='list-disc pl-5 text-gray-600 mb-4'><li>Dedicated support every step of the way</li><li>Clear communication and updates</li><li>All paperwork and closing costs handled by us</li></ul>
+                    <button class='modal-learn-btn' onclick='showContactMessage("process")'>Learn More</button>
+                `;
+            }
+            body.innerHTML = content;
+            modal.classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
+        }
+        // Professional contact message for Learn More
+        function showContactMessage(type) {
+            const body = document.getElementById('modal-body');
+            let title = '';
+            let icon = '';
+            if (type === 'purchase') {
+                icon = '<i class="fas fa-money-bill-wave"></i>';
+                title = 'Quick Property Purchase';
+            } else if (type === 'valuation') {
+                icon = '<i class="fas fa-balance-scale-left"></i>';
+                title = 'Professional Valuation';
+            } else if (type === 'process') {
+                icon = '<i class="fas fa-handshake"></i>';
+                title = 'Smooth Process';
+            }
+            body.innerHTML = `
+                <div class='modal-icon'>${icon}</div>
+                <h2 class='text-2xl font-bold mb-4 text-gray-800'>${title}</h2>
+                <div class='text-gray-700 mb-4'>
+                    <p>Thank you for your interest in our <span class='font-semibold'>${title}</span> service. For more information or to discuss your needs in detail, please contact our team directly:</p>
+                    <div class='mt-4 mb-2 flex items-center'><i class="fas fa-envelope text-gray-600 mr-2"></i> <a href='mailto:estatianest@gmail.com' class='text-blue-700 underline'>estatianest@gmail.com</a></div>
+                    <div class='mb-2 flex items-center'><i class="fas fa-phone-alt text-gray-600 mr-2"></i> <a href='tel:+35361526709' class='text-blue-700 underline'>+353 (61) 526 709</a></div>
+                    <div class='mb-2 flex items-center'><i class="fas fa-phone-alt text-gray-600 mr-2"></i> <a href='tel:+35361526710' class='text-blue-700 underline'>+353 (61) 526 710</a></div>
+                </div>
+                <button class='modal-learn-btn' onclick='openModal("${type}")'>Back</button>
+            `;
+        }
+        // Optional: Close modal on overlay click
+        document.getElementById('modal-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
 </body>
 
 </html>
