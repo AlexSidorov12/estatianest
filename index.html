@@ -578,15 +578,38 @@
     <script src="script.js"></script>
 
     <script>
-        // Hero content animation on page load
-        document.addEventListener('DOMContentLoaded', () => {
+        // Initialize all functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Back to Top Button functionality
+            const backToTopButton = document.getElementById('back-to-top');
+
+            // Show button when user scrolls down 300px
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.opacity = '1';
+                    backToTopButton.style.pointerEvents = 'auto';
+                } else {
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.pointerEvents = 'none';
+                }
+            });
+
+            // Smooth scroll to top when button is clicked
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Hero content animation
             const heroContent = document.querySelector('.hero-content');
             if (heroContent) {
                 const elements = heroContent.children;
                 for (let i = 0; i < elements.length; i++) {
                     setTimeout(() => {
                         elements[i].classList.add('is-visible');
-                    }, i * 150); // Stagger the animation slightly
+                    }, i * 150);
                 }
             }
         });
@@ -594,7 +617,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-opacity duration-300 z-50 hover:bg-gray-700">
+        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-all duration-300 z-50 hover:bg-gray-700 cursor-pointer">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -676,26 +699,6 @@
     </script>
 
     <script>
-        // Back to Top Button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-
-        // Show button when user scrolls down 300px
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.opacity = '1';
-            } else {
-                backToTopButton.style.opacity = '0';
-            }
-        });
-
-        // Smooth scroll to top when button is clicked
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
         // Hamburger menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
