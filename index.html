@@ -173,12 +173,15 @@
     </nav>
 
     <!-- Mobile nav links -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 pt-2 pb-4">
-        <a href="#home" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Home</a>
-        <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">How It Works</a>
-        <a href="#services" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Services</a>
-        <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">About</a>
-        <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Contact</a>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white bg-opacity-95 z-50 hidden flex flex-col items-center justify-center">
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 text-3xl text-gray-800 focus:outline-none">&times;</button>
+        <a href="#home" class="block py-4 text-2xl text-gray-700 hover:text-gray-900 nav-link">Home</a>
+        <a href="#how-it-works" class="block py-4 text-2xl text-gray-700 hover:text-gray-900 nav-link">How It Works</a>
+        <a href="#services" class="block py-4 text-2xl text-gray-700 hover:text-gray-900 nav-link">Services</a>
+        <a href="#about" class="block py-4 text-2xl text-gray-700 hover:text-gray-900 nav-link">About</a>
+        <a href="#contact" class="block py-4 text-2xl text-gray-700 hover:text-gray-900 nav-link">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -674,15 +677,21 @@
         // Hamburger menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.remove('hidden');
             });
-            // Optional: Hide menu when a link is clicked
+            // Hide menu when a link is clicked
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
+            });
+        }
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         }
     </script>
