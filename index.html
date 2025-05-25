@@ -150,11 +150,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 flex items-center">
                         <i class="fas fa-house text-gray-800 mr-2"></i>Estatianest
                     </h1>
                 </div>
-                <div class="flex items-center space-x-4">
+                <!-- Hamburger menu button (mobile) -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none text-3xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Desktop nav links -->
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="#home" class="text-gray-600 hover:text-gray-900 nav-link">Home</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 nav-link">How It Works</a>
                     <a href="#services" class="text-gray-600 hover:text-gray-900 nav-link">Services</a>
@@ -164,6 +171,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile nav links -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 pt-2 pb-4">
+        <a href="#home" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Home</a>
+        <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">How It Works</a>
+        <a href="#services" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Services</a>
+        <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">About</a>
+        <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900 nav-link">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="pt-24 pb-12 bg-gray-900 relative overflow-hidden">
@@ -652,6 +668,23 @@
         document.getElementById('modal-overlay').addEventListener('click', function (e) {
             if (e.target === this) closeModal();
         });
+    </script>
+
+    <script>
+        // Hamburger menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Optional: Hide menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
     </script>
 </body>
 
