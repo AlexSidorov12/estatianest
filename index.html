@@ -588,9 +588,11 @@
                 if (window.pageYOffset > 300) {
                     backToTopButton.style.opacity = '1';
                     backToTopButton.style.pointerEvents = 'auto';
+                    backToTopButton.style.transform = 'translateY(0)';
                 } else {
                     backToTopButton.style.opacity = '0';
                     backToTopButton.style.pointerEvents = 'none';
+                    backToTopButton.style.transform = 'translateY(20px)';
                 }
             });
 
@@ -617,8 +619,12 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-md opacity-0 transition-all duration-300 z-50 hover:bg-gray-700 cursor-pointer">
-        <i class="fas fa-arrow-up"></i>
+        class="fixed bottom-6 right-6 bg-gray-800 text-white p-4 rounded-full shadow-lg opacity-0 transition-all duration-300 z-50 hover:bg-gray-700 cursor-pointer group">
+        <i class="fas fa-arrow-up text-xl"></i>
+        <span
+            class="absolute right-full mr-2 bg-gray-800 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Back to Top
+        </span>
     </button>
 
     <!-- Service Modals -->
